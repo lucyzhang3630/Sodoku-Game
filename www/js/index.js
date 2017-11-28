@@ -204,7 +204,9 @@ var popupNumbers = new PopupNumbers($("#popupNumbers"));
 grid.bindPopup(popupNumbers);
 
 $("#check").on("click", function (e) {
-  grid.check();
+  if (grid.check()) {
+    alert("success!");
+  }
 });
 $("#reset").on("click", function (e) {
   grid.reset();
@@ -315,7 +317,7 @@ var Grid = function () {
   }, {
     key: "clear",
     value: function clear() {
-      this._$container.find("span.error").removeClass("error");
+      this._$container.find("span.error").removeClass("error mark1 mark2");
     }
     //create a new panel
 
@@ -617,7 +619,7 @@ function checkArray(array) {
   var length = array.length;
   var marks = new Array(length);
   marks.fill(true);
-  for (var i = 0; i < length - 1; i++) {
+  for (var i = 0; i < length; i++) {
     //if this position has already been checked and marked false, skip
     if (!marks[i]) {
       continue;
@@ -629,7 +631,7 @@ function checkArray(array) {
       continue;
     }
     //check if there multiple same value
-    for (var j = i + 1; j < length; j++) {
+    for (var j = i + 1; j < length - 1; j++) {
       if (v === array[j]) {
         marks[i] = marks[j] = false;
         continue;

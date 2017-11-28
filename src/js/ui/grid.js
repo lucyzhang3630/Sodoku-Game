@@ -81,7 +81,7 @@ class Grid {
   //clear the marks made by users
   clear(){
     this._$container.find("span.error")
-      .removeClass("error");
+      .removeClass("error mark1 mark2");
   }
   //create a new panel
   rebuild(){

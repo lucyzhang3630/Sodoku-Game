@@ -7,37 +7,74 @@
     <link rel="stylesheet" type="text/css" href="./css/main.css">
   </head>
   <body>
-    <!--title-->
-    <div class="title">
-      <h1>Sodoku Game</h1>
-    </div>
-    <!--sodoku-->
-    <div class="container grid" id="container">
-
-    </div>
-    <!--button groups-->
-    <div class="dashboard" id="dashboard">
-      <div class="buttons">
-        <button type="button" id="check">Check</button>
-        <button type="button" id="reset">Reset</button>
-        <button type="button" id="clear">Clear</button>
-        <button type="button" id="rebuild">New</button>
+    <div class="gameBoard" >
+      <!--title-->
+      <div class="title">
+        <h1>Sodoku Game</h1>
+      </div>
+      <!--sodoku-->
+      <div class="container grid" id="container"></div>
+      <!--button groups-->
+      <div class="dashboard" id="dashboard">
+        <div class="buttons">
+          <button type="button" id="check">Check</button>
+          <button type="button" id="reset">Reset</button>
+          <button type="button" id="clear">Clear</button>
+          <button type="button" id="rebuild">New</button>
+        </div>
+      </div>
+      <!--popup panel-->
+      <div class="grid popup_num hidden" id="popupNumbers">
+          <div class="row">
+            <span>1</span><span>2</span><span>3</span>
+          </div>
+          <div class="row">
+            <span>4</span><span>5</span><span>6</span>
+          </div>
+          <div class="row">
+            <span>7</span><span>8</span><span>9</span>
+          </div>
+          <div class="row">
+            <span class="mark1"></span><span class="empty"></span><span class="mark2"></span>
+          </div>
       </div>
     </div>
-    <!--popup panel-->
-    <div class="grid popup_num hidden" id="popupNumbers">
-        <div class="row">
-          <span>1</span><span>2</span><span>3</span>
-        </div>
-        <div class="row">
-          <span>4</span><span>5</span><span>6</span>
-        </div>
-        <div class="row">
-          <span>7</span><span>8</span><span>9</span>
-        </div>
-        <div class="row">
-          <span class="mark1"></span><span class="empty"></span><span class="mark2"></span>
-        </div>
+
+    <!--game introduction-->
+    <div class="discription">
+      <div class="gameIntro">
+        <h1>Game introduction</h1>
+        <p>Sudoku (数独 sūdoku, digit-single) (/suːˈdoʊkuː/ (About this sound listen), /-ˈdɒ-/, /sə-/,
+           originally called Number Place) is a logic-based, combinatorial number-placement puzzle.
+          The objective is to fill a 9×9 grid with digits so that each column, each row, and each of
+          the nine 3×3 subgrids that compose the grid (also called "boxes", "blocks", or "regions")
+          contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid,
+          which for a well-posed puzzle has a single solution.</br>
+
+          Completed games are always a type of Latin square with an additional constraint on the contents
+          of individual regions. For example, the same single integer may not appear twice in the same row,
+          column, or any of the nine 3×3 subregions of the 9x9 playing board.(Ref <a href="https://en.wikipedia.org/wiki/Sudoku">Sodoku Wiki</a>)</p>
+      </div>
+      <!--game rules-->
+      <div class="rules">
+        <h1>How To Play</h1>
+        <p><strong>For the board:</strong>  click on the empty space on the board, a popup panel with 9 number
+           and 3 additional spaces will appear. Click on the number will fill the board with it.
+           If you want to remove the number you just fills in, click on the white space on the panel
+           will remove it. The blue space will fill the board with blue meanning you are not
+            sure about it and the green color will fill the board with green meaning you are sure about it.
+            The color space is just some additional mark for yourself, feel free to use it or not </br>
+          <strong>For the buttons:</strong> the <strong>Check</strong> button is used when you finished your filling of the board, and check for if
+          you fill all the empty space with correct number, if there is wrong number, it will be marked with red.
+          The <strong>Reset</strong> button will reset the game to the initial state.
+          The <strong>Clear</strong> button is used after you did a check, it will empty all the red mark space.
+          The <strong>New</strong> button is used to create a new Sodoku game.
+          If you finished the sodoku game successfully, an alert box will popup, stating you have finished the game successfully.
+           </p>
+          <h1>Contact</h1>
+          <p>If you find any bug in this game, feel free to send me an email, my email address is
+          <strong>yananzhang2013@gmail.com</strong>. Hope you enjoy playing the game :)</p>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
